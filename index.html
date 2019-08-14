@@ -17,15 +17,19 @@
                     age: 30
                 }
 
-                handleClick(e) {
-                    console.log(e.target)
+                handleClick = (e) => {
+                    this.setState({
+                        name: 'Yoshi',
+                        age: 25
+                    })
+                    console.log(this.state)
                 }
 
-                handleMouseOver(e) {
+                handleMouseOver = (e) => {
                     console.log(e)
                 }
 
-                handleCopy(e) {
+                handleCopy = (e) => {
                     console.log('Try being original for once')
                 }
 
@@ -41,7 +45,6 @@
                     )
                 }
             }
-
             ReactDOM.render(<App />, document.getElementById('app'))
         </script>
 </body>
