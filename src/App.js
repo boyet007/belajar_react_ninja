@@ -1,45 +1,32 @@
 import React, { Component } from 'react'
-import Ninjas from './Ninjas'
-import AddNinja from './AddNinja'
+import Todos from './Todos'
 
-export class App extends Component {
+
+export default class App extends Component {
+  
   state = {
-    ninjas: [
-      { name: 'Ryu', age: 32, belt: 'black', id: 1 },
-      { name: 'Yoshi', age: 20, belt: 'green', id: 2 },
-      { name: 'Crystal', age: 25, belt: 'pink', id: 3 },
+    todos: [
+      { id: 1, content: 'buy some milk'},
+      { id: 2, content: 'play mario kart'}
     ]
   }
 
-  addNinja = (ninja) => {
-    ninja.id = Math.random()
-    let ninjas = [...this.state.ninjas, ninja]
-    this.setState({
-      ninjas: ninjas
-      // ninjas: this.ninja.push(ninja)
-      
+  deleteTodo = (id) => {
+    const todos = this.state.todos.filter(todo => {
+      return todo.id !== id
     })
-  }  
 
-  deleteNinja = (id) => {
-    let ninjas = this.state.ninjas.filter(ninja => {
-      return ninja.id !== id
-    })
     this.setState({
-        ninjas: ninjas
+      todos
     })
   }
-
+  
   render() {
     return (
-      <div className="App">
-        <h1>My first React App!</h1>
-        <p>Welcome</p>
-        <Ninjas ninjas={this.state.ninjas} deleteNinja={this.deleteNinja} />
-        <AddNinja addNinja={this.addNinja} />
-        </div>
+      <div className="todo-app container">
+        <h1 className="center blue-text">Todos</h1> 
+        <Todos todos={ this.state.todos } deleteTodo={ this.deleteTodo } /> 
+      </div>
     )
   }
 }
-
-export default App
