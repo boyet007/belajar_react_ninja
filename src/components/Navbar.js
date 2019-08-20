@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link, NavLink, withRouter } from 'react-router-dom'
-import { fromEventPattern } from 'rxjs';
+//import { fromEventPattern } from 'rxjs';
 
 
 const Navbar = (props) => {
-    console.log(props)
+    //console.log(props)
     
-    setTimeout(() => {
-        props.history.push('/about')
-    }, 2000)
+    // setTimeout(() => {
+    //     props.history.push('/about')
+    // }, 2000)
 
     return (
         //nav.nav-isExpressionWrapper.red.darken-3
