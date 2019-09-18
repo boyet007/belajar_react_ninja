@@ -1,6 +1,10 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
-const Navbar = () => {
+import { Link, NavLink, withRouter } from 'react-router-dom'
+const Navbar = (props) => {
+
+    setTimeout(() => {
+        props.history.push('/about')
+    }, 2000)
     return (
         <nav className="na-wrapper red darken-3">
             <div className="container">
@@ -17,4 +21,4 @@ const Navbar = () => {
 
 //NavLink supaya linknya bisa di set active untuk di style
 
-export default Navbar
+export default withRouter(Navbar)
