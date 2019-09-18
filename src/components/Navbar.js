@@ -1,14 +1,17 @@
 import React from 'react'
-
 const Navbar = () => {
     return (
-        <div className="nav-wrapper red darken-1">
+        <nav className="na-wrapper red darken-3">
             <div className="container">
-                <a href="" className="brand-logo">Poke's Times</a>
-                <ul>
-                    <li><a></a></li>
+                <a href="/" className="brand-logo">Poke's Times</a>
+                <ul className="right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
-        </div>
-    )
+        </nav>
+    ) 
 }
+
+export default Navbar
